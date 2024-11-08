@@ -6,7 +6,7 @@ const map = L.map('map');
 // Adiciona o tile layer do OpenStreetMap com zoom mínimo e máximo
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-    minZoom: 19,
+    minZoom: 15,
     maxZoom: 21
 }).addTo(map);
 
@@ -126,7 +126,7 @@ function collectWaypoints(userLat, userLng) {
 
         const distance = userPosition.distanceTo(waypointPosition); // Distância em metros
 
-        if (distance < 100) {  // 3 metros de proximidade
+        if (distance < 10) {  // 3 metros de proximidade
             waypoint.marker.remove();
             tocarSomWaypoint();
             waypointCaptured = true;
