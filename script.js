@@ -78,7 +78,7 @@ function updateUserPosition(lat, lng, direction) {
 
     // Aplica o zoom apenas na primeira vez
     if (!zoomInicialAplicado) {
-        map.setView([lat, lng], 19);
+        map.setView([lat, lng], 17);
         zoomInicialAplicado = true;
     }
 
@@ -126,7 +126,7 @@ function collectWaypoints(userLat, userLng) {
 
         const distance = userPosition.distanceTo(waypointPosition); // Distância em metros
 
-        if (distance < 10) {  // 3 metros de proximidade
+        if (distance < 8) {  // 3 metros de proximidade
             waypoint.marker.remove();
             tocarSomWaypoint();
             waypointCaptured = true;
