@@ -126,7 +126,7 @@ function collectWaypoints(userLat, userLng) {
 
         const distance = userPosition.distanceTo(waypointPosition); // Distância em metros
 
-        if (distance < 2) {  // 3 metros de proximidade
+        if (distance < 100) {  // 3 metros de proximidade
             waypoint.marker.remove();
             tocarSomWaypoint();
             waypointCaptured = true;
