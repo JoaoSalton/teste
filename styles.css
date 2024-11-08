@@ -1,11 +1,14 @@
 
 html, body {
-    margin: 0; /* Remove margens padrão */
-    padding: 0; /* Remove preenchimento padrão */
-    height: 100%; /* Define altura total da tela */
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
 }
 
 #map {
+    flex-grow: 1;
     width: 100%; /* Largura total da tela */
     height: 100%; /* Altura total da tela */
     position: absolute; /* Para posicionamento absoluto */
@@ -69,6 +72,23 @@ html, body {
 /* Remove o botão de fechar "X" do popup */
 .leaflet-popup-close-button {
     display: none !important;
+}
+
+/* Para telas de iPhone e outros dispositivos móveis */
+@media only screen and (max-width: 768px) {
+    #map {
+        height: 100vh; /* Usar altura total da tela */
+    }
+
+    /* Ajustando os ícones */
+    .leaflet-marker-icon {
+        width: 25px;
+        height: 25px;
+    }
+
+    .waypoint-count-text {
+        font-size: 12px; /* Ajuste do tamanho da fonte */
+    }
 }
 
 
