@@ -169,6 +169,11 @@ function collectWaypoints(userLat, userLng) {
 
 // Função para verificar e narrar a quantidade de waypoints restantes
 function updateRemainingWaypoints() {
+    // Atualiza o conteúdo do popup do marcador do usuário
+    if (userMarker) {
+        userMarker.setPopupContent(`Waypoints restantes: ${waypoints.length}`);
+    }
+
     if (waypoints.length > 1) {
         narrar("Seu Cavalo Comeu A Cenoura. Restam " + waypoints.length + " Cenouras.");
     } else if (waypoints.length === 1) {
