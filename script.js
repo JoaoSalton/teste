@@ -1,3 +1,29 @@
+// Cria o botão
+const startButton = document.createElement("button");
+startButton.textContent = "Iniciar Jogo";
+startButton.style.position = "absolute";
+startButton.style.top = "50%";
+startButton.style.left = "50%";
+startButton.style.transform = "translate(-50%, -50%)";
+startButton.style.padding = "10px 20px";
+startButton.style.fontSize = "16px";
+startButton.style.cursor = "pointer";
+startButton.style.zIndex = 1000; // Garante que o botão apareça acima de outros elementos
+
+// Adiciona o botão ao corpo da página
+document.body.appendChild(startButton);
+
+// Função para iniciar os áudios e remover o botão
+function iniciarJogo() {
+    somPassos.play(); // Toca o som para desbloquear o áudio
+    document.body.removeChild(startButton); // Remove o botão após o clique
+
+    // Agora, chama a função para começar o jogo
+    getUserGPS();
+}
+
+// Adiciona um evento de clique ao botão
+startButton.addEventListener("click", iniciarJogo);
 // Variável para controlar se o zoom inicial foi aplicado
 let zoomInicialAplicado = false;
 // Inicializa o mapa sem centralizá-lo inicialmente
