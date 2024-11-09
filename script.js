@@ -178,7 +178,8 @@ function updateRemainingWaypoints() {
         narrar("Parabéns! Seu Cavalo Está Bem Alimentado");
         tocarSomParabens(); // Toca som de parabéns ao coletar todos os waypoints
     }
-}
+} // Fechamento da função
+
     
 
 // Função para sintetizar fala
