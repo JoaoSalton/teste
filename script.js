@@ -177,7 +177,7 @@ function collectWaypoints(userLat, userLng) {
             narrar("Parabéns! Seu Cavalo Está Bem Alimentado");
         }
     
-}
+
 // Função para sintetizar fala
 function narrar(mensagem) {
     const sintese = new SpeechSynthesisUtterance(mensagem);
