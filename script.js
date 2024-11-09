@@ -168,16 +168,21 @@ function collectWaypoints(userLat, userLng) {
     }
 }
 
-// Função para atualizar o contador de waypoints restantes
-function updateRemainingWaypoints() {
-    if (userMarker) {
-        if (waypoints.length === 0) {
-            userMarker.getPopup().setContent(`Parabéns! Você Conseguiu!`).openPopup();
-            tocarSomParabens();
+// Verifica se há waypoints restantes e narra a quantidade
+        if (waypoints.length > 1) {
+            narrar("Seu Cavalo Comeu A Cenoura. Restam " + waypoints.length + " Cenouras.");
+        } else if (waypoints.length === 1) {
+            narrar("Seu Cavalo Comeu A Cenoura. Resta Apenas Uma Cenoura.");
         } else {
-            userMarker.getPopup().setContent(`Waypoints restantes: ${waypoints.length}`).openPopup();
+            narrar("Parabéns! Seu Cavalo Está Bem Alimentado");
         }
     }
+}
+// Função para sintetizar fala
+function narrar(mensagem) {
+    const sintese = new SpeechSynthesisUtterance(mensagem);
+    sintese.lang = 'pt-BR'; // Define a língua para português brasileiro
+    window.speechSynthesis.speak(sintese);
 }
 
 // Função para obter a posição GPS do usuário
