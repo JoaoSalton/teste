@@ -104,7 +104,7 @@ function updateUserPosition(lat, lng, direction) {
 
     // Aplica o zoom apenas na primeira vez
     if (!zoomInicialAplicado) {
-        map.setView([lat, lng], 17);
+        map.setView([lat, lng], 18);
         zoomInicialAplicado = true;
     }
 
@@ -123,7 +123,9 @@ function addFixedWaypoints() {
         { lat: -27.1341332, lng: -48.5956231 },
         { lat: -27.1363430, lng: -48.5939888 },
         { lat: -27.1406266, lng: -48.5895595 },
-        { lat: -27.1445982, lng: -48.5860627 }
+        { lat: -27.1445982, lng: -48.5860627 },
+        { lat: -27.134320, lng: -48.598074},
+        { lat: -27.134460, lng: -48.598276}   
     ];
 
     const waypointIcon = L.icon({ iconUrl: 'way.png', iconSize: [50, 50], iconAnchor: [25, 25] });
@@ -152,7 +154,7 @@ function collectWaypoints(userLat, userLng) {
 
         const distance = userPosition.distanceTo(waypointPosition); // Distância em metros
 
-        if (distance < 50) {  // 3 metros de proximidade
+        if (distance < 70) {  // 3 metros de proximidade
             waypoint.marker.remove();
             tocarSomWaypoint();
             waypointCaptured = true;
