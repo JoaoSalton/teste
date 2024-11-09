@@ -32,8 +32,8 @@ const map = L.map('map');
 // Adiciona o tile layer do OpenStreetMap com zoom mínimo e máximo
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-    minZoom: 15,
-    maxZoom: 21
+    minZoom: 10,
+    maxZoom: 20
 }).addTo(map);
 
 // Define os ícones de cavalo para cada direção
