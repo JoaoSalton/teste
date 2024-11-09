@@ -147,9 +147,7 @@ function collectWaypoints(userLat, userLng) {
     let waypointCaptured = false;
 
     waypoints = waypoints.filter(waypoint => {
-        const waypointLat = waypoint.lat;
-        const waypointLng = waypoint.lng;
-        const waypointPosition = L.latLng(waypointLat, waypointLng);
+        const waypointPosition = L.latLng(waypoint.lat, waypoint.lng);
         const userPosition = L.latLng(userLat, userLng);
 
         const distance = userPosition.distanceTo(waypointPosition); // Distância em metros
@@ -158,11 +156,12 @@ function collectWaypoints(userLat, userLng) {
             waypoint.marker.remove();
             tocarSomWaypoint();
             waypointCaptured = true;
-            return false;
+            return false; // Remove o waypoint da lista
         }
-        return true;
+        return true; // Mantém o waypoint na lista
     });
 
+    // Atualiza o contador se algum waypoint foi capturado
     if (waypointCaptured) {
         updateRemainingWaypoints();
     }
@@ -178,9 +177,7 @@ function updateRemainingWaypoints() {
         narrar("Parabéns! Seu Cavalo Está Bem Alimentado");
         tocarSomParabens(); // Toca som de parabéns ao coletar todos os waypoints
     }
-} // Fechamento da função
-
-    
+}
 
 // Função para sintetizar fala
 function narrar(mensagem) {
