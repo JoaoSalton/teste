@@ -142,7 +142,7 @@ function addFixedWaypoints() {
 // Chame `addFixedWaypoints` para adicionar waypoints fixos
 addFixedWaypoints();
 
-// Função para coletar waypoints próximos
+// Função para coletar waypoints próximos e narrar
 function collectWaypoints(userLat, userLng) {
     let waypointCaptured = false;
 
@@ -154,7 +154,7 @@ function collectWaypoints(userLat, userLng) {
 
         const distance = userPosition.distanceTo(waypointPosition); // Distância em metros
 
-        if (distance < 70) {  // 3 metros de proximidade
+        if (distance < 70) {  // Proximidade para capturar waypoint
             waypoint.marker.remove();
             tocarSomWaypoint();
             waypointCaptured = true;
@@ -168,14 +168,17 @@ function collectWaypoints(userLat, userLng) {
     }
 }
 
-// Verifica se há waypoints restantes e narra a quantidade
-        if (waypoints.length > 1) {
-            narrar("Seu Cavalo Comeu A Cenoura. Restam " + waypoints.length + " Cenouras.");
-        } else if (waypoints.length === 1) {
-            narrar("Seu Cavalo Comeu A Cenoura. Resta Apenas Uma Cenoura.");
-        } else {
-            narrar("Parabéns! Seu Cavalo Está Bem Alimentado");
-        }
+// Função para verificar e narrar a quantidade de waypoints restantes
+function updateRemainingWaypoints() {
+    if (waypoints.length > 1) {
+        narrar("Seu Cavalo Comeu A Cenoura. Restam " + waypoints.length + " Cenouras.");
+    } else if (waypoints.length === 1) {
+        narrar("Seu Cavalo Comeu A Cenoura. Resta Apenas Uma Cenoura.");
+    } else {
+        narrar("Parabéns! Seu Cavalo Está Bem Alimentado");
+        tocarSomParabens(); // Toca som de parabéns ao coletar todos os waypoints
+    }
+}
     
 
 // Função para sintetizar fala
