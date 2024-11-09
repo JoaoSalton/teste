@@ -38,10 +38,10 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 // Define os ícones de cavalo para cada direção
 const userIcons = {
-    up: L.icon({ iconUrl: 'up.png', iconSize: [15, 50], iconAnchor: [7 , 25] }),
-    down: L.icon({ iconUrl: 'down.png', iconSize: [15, 50], iconAnchor: [7 , 25] }),
-    left: L.icon({ iconUrl: 'left.png', iconSize: [50, 15], iconAnchor: [25 , 7] }),
-    right: L.icon({ iconUrl: 'right.png', iconSize: [50, 15], iconAnchor: [25 ,7] })
+    up: L.icon({ iconUrl: 'up.png', iconSize: [35, 60], iconAnchor: [16, 30] }),
+    down: L.icon({ iconUrl: 'down.png', iconSize: [35, 60], iconAnchor: [16 , 30] }),
+    left: L.icon({ iconUrl: 'left.png', iconSize: [60, 35], iconAnchor: [30 , 16] }),
+    right: L.icon({ iconUrl: 'right.png', iconSize: [60, 35], iconAnchor: [30 ,16] })
 };
 
 // Variável para armazenar o marcador do usuário
@@ -51,14 +51,14 @@ let userMarker;
 let waypoints = [];
 
 // Som de passos
-const somPassos = new Audio('horsewalker.mp3');
+const somPassos = new Audio('regga.mp3');
 let tocandoPassos = false;
 
 // Som de waypoint
-const somWaypoint = new Audio('carrot.mp3');
+const somWaypoint = new Audio('smoke.mp3');
 
 // Som de parabéns
-const somParabens = new Audio('corneta.mp3'); // Substitua pelo caminho correto do som de parabéns
+const somParabens = new Audio('trip.mp3'); // Substitua pelo caminho correto do som de parabéns
 
 // Função para tocar o som de passos
 function tocarSomPassos() {
