@@ -176,7 +176,7 @@ function collectWaypoints(userLat, userLng) {
         } else {
             narrar("Parabéns! Seu Cavalo Está Bem Alimentado");
         }
-    }
+    
 }
 // Função para sintetizar fala
 function narrar(mensagem) {
