@@ -8,8 +8,8 @@ html, body {
 
 #map {
     flex-grow: 1;
-    width: 100%; /* Largura total da tela */
-    height: 100%; /* Altura total da tela */
+    width: 100vw; /* Largura total da tela */
+    height: 100vh; /* Altura total da tela */
     position: absolute; /* Para posicionamento absoluto */
     top: 0; /* Alinha o mapa ao topo */
     left: 0; /* Alinha o mapa à esquerda */
